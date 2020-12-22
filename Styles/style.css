@@ -22,3 +22,6 @@ area{
     color: rgb(115, 156, 142);
     visibility: visible;
 }
+body{
+	text-align: center;
+}
