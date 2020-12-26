@@ -226,8 +226,8 @@ var test = [
     }
 ]
 function click2(elem) {
-    if (elem.innerText != "Restart") {
-        var img = document.getElementById("imgg");
+    var img = document.getElementById("imgg");
+    if (elem.value != "Restart") {
         if (img.src.split("/Media/")[1] == 'answer.jpg') {
             alert("Choose a response");
             return;
@@ -267,18 +267,20 @@ function click2(elem) {
             if (counter == 13)
                 document.getElementById("green").innerText = "Result";
             if (counter == 14) {
-                document.getElementById("green").innerText = "Restart";
+                document.getElementById("green").value = "Restart";
                 document.getElementsByTagName("h3")[0].innerText = "Your opinion coincides with my";
                 document.getElementsByTagName("h5")[0].innerText = 100 * result / 140 + " %";
+                document.getElementById("imgg").style.visibility = "hidden";
             }
         }
     }
     else {
-        document.getElementById("green").innerText = "Next";
+        document.getElementById("green").value = "Next";
         counter = 0;
         result = 0;
         document.getElementsByTagName("h3")[0].innerText = "Question 1";
         document.getElementsByTagName("h5")[0].innerText = test[0].question;
         img.src = "../Media/answer.jpg";
+        document.getElementById("imgg").style.visibility = "visible";
     }
 }
