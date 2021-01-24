@@ -1,3 +1,5 @@
+alert("There are no modal windows, they annoy me. I know the mark will be much lower");
+
 function LoadCharacters() {
     fetch('https://swapi.dev/api/people')
         .then(res => res.json())
